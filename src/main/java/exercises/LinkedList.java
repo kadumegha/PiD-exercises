@@ -17,6 +17,11 @@ public class LinkedList {
         first = null;
     }
 
+    /**
+     * Add an integer element to the list.
+     *
+     * @param elem The element to be added.
+     */
     public void add(int elem) {
         if (first == null) {
             // this means the list is empty!
