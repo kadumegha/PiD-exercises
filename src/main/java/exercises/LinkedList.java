@@ -41,7 +41,13 @@ public class LinkedList {
         }
     }
 
-    int get(int index) {
+    /**
+     * Return the integer element at the given index.
+     *
+     * @param index the index of the element to be returned.
+     * @return the element at the given index.
+     */
+    public int get(int index) {
         // 2 cases
         if (first == null) { // list is empty
             // case 1: zero elements
