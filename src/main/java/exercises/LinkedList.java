@@ -11,7 +11,11 @@ class Node {
 }
 
 public class LinkedList {
-    Node first = null;
+    Node first;
+
+    public LinkedList() {
+        first = null;
+    }
 
     public void add(int elem) {
         if (first == null) {
@@ -34,6 +38,35 @@ public class LinkedList {
             // because current.next == null
             Node last = current;
             last.next = new Node(elem, null);
+        }
+    }
+
+    /**
+     * Return the integer element at the given index.
+     *
+     * @param index the index of the element to be returned.
+     * @return the element at the given index.
+     */
+    public int get(int index) {
+        // 2 cases
+        if (first == null) { // list is empty
+            // case 1: zero elements
+            throw new IndexOutOfBoundsException("list is empty");
+        } else {
+            // case 2: at least one element
+            int counter = 0;
+            Node current = first;
+            // can use "next" field
+            while (current.next != null && counter < index) {
+                current = current.next;
+                counter++;
+            }
+            if (counter == index) {
+                return current.elem;
+            } else {
+                throw new IndexOutOfBoundsException("index out of bounds");
+            }
+
         }
     }
 }
