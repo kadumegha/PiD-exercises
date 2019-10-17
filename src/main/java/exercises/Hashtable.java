@@ -33,6 +33,17 @@ public class Hashtable {
             // object containing our key and value.
             table[index] = e;
         }
+        else if (table[index] != null)
+        {
+            Entry current = null;
+            while(current.next != null){
+                current = current.next;
+            }
+            Entry last = current;
+            last.next = new Entry(key,value,null);
+
+        }
+
     }
 
     public Object lookup(Object key) {
